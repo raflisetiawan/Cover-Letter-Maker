@@ -120,7 +120,7 @@ export const CoverLetterPreview = ({ content, supportingDocs, onReset, t }: Cove
 
       // 4. Save and Download
       const pdfBytes = await pdfDoc.save();
-      const blob = new Blob([pdfBytes as any], { type: 'application/pdf' });
+      const blob = new Blob([pdfBytes as unknown as BlobPart], { type: 'application/pdf' });
       const link = document.createElement('a');
       link.href = URL.createObjectURL(blob);
       link.download = 'job_application_bundle.pdf';

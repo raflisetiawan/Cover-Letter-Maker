@@ -94,7 +94,7 @@ export const GeneratorForm = ({ onGenerate, isLoading, error, t }: GeneratorForm
     for (let i = 1; i <= pdf.numPages; i++) {
         const page = await pdf.getPage(i);
         const textContent = await page.getTextContent();
-        const pageText = textContent.items.map((item: any) => item.str).join(' ');
+        const pageText = textContent.items.map((item: unknown) => (item as { str: string }).str || '').join(' ');
         fullText += pageText + '\n';
     }
     return fullText;
@@ -106,7 +106,7 @@ export const GeneratorForm = ({ onGenerate, isLoading, error, t }: GeneratorForm
     try {
       const text = await extractTextFromPDF(cvFile);
       onGenerate({ companyName, cvText: text, apiKey, language, supportingDocs, customPrompt });
-    } catch (err) {
+    } catch {
       setFileError(t.errors.readError);
     }
   };

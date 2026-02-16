@@ -10,11 +10,11 @@ describe('translations', () => {
   });
 
   // Helper to get flat keys from a nested object
-  function getKeys(obj: Record<string, any>, prefix = ''): string[] {
+  function getKeys(obj: Record<string, unknown>, prefix = ''): string[] {
     return Object.entries(obj).flatMap(([key, value]) => {
       const fullKey = prefix ? `${prefix}.${key}` : key;
       if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
-        return getKeys(value, fullKey);
+        return getKeys(value as Record<string, unknown>, fullKey);
       }
       return [fullKey];
     });
@@ -30,7 +30,7 @@ describe('translations', () => {
     for (const lang of languages) {
       const keys = getKeys(translations[lang]);
       for (const key of keys) {
-        const value = key.split('.').reduce((obj: any, k) => obj[k], translations[lang]);
+        const value = key.split('.').reduce((obj, k) => (obj as Record<string, unknown>)[k], translations[lang] as unknown);
         if (typeof value === 'string') {
           expect(value.trim()).not.toBe('');
         }

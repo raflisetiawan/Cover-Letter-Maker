@@ -81,9 +81,9 @@ function App() {
           setGeneratedContent(text);
           setView('result');
           return; // Success! Exit the function
-        } catch (err: any) {
+        } catch (err: unknown) {
           console.warn(`Failed with model ${modelName}:`, err);
-          lastError = err;
+          lastError = err instanceof Error ? err : new Error(String(err));
           // Continue to next model
         }
       }
@@ -91,9 +91,10 @@ function App() {
       // If loop finishes without returning, throw the last error
       if (lastError) throw lastError;
 
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error("AI Generation Error:", err);
-      setError(err.message || "Failed to generate cover letter. Please check your API key and try again.");
+      const errorMessage = err instanceof Error ? err.message : "Failed to generate cover letter. Please check your API key and try again.";
+      setError(errorMessage);
     } finally {
       setIsLoading(false);
     }
