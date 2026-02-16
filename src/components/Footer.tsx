@@ -19,7 +19,7 @@ export const Footer = ({ onGuideClick }: { onGuideClick: () => void }) => {
             </button>
             
             <a 
-              href="https://github.com" 
+              href="https://github.com/raflisetiawan/Cover-Letter-Maker" 
               target="_blank" 
               rel="noreferrer"
               className="text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors"

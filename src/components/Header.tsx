@@ -30,7 +30,7 @@ export const Header = ({ currentLang, setLanguage }: HeaderProps) => {
               {currentLang.toUpperCase()}
             </button>
             <a 
-              href="https://github.com" 
+              href="https://github.com/raflisetiawan/Cover-Letter-Maker" 
               target="_blank" 
               rel="noreferrer"
               className="hidden md:block text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors"
