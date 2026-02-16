@@ -1,4 +1,3 @@
-import React from 'react';
 import { HelpCircle } from 'lucide-react';
 
 export const Footer = ({ onGuideClick }: { onGuideClick: () => void }) => {

@@ -148,7 +148,7 @@ function App() {
         )}
       </main>
       
-      <Footer onGuideClick={() => setView('guide')} t={t.footer} />
+      <Footer onGuideClick={() => setView('guide')} />
     </div>
   );
 }
