@@ -38,6 +38,11 @@ function App() {
           console.log(`Attempting generation with model: ${modelName}`);
           
 
+          const today = new Date();
+          const todayStr = language === 'Indonesian' 
+            ? today.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })
+            : today.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
           const prompt = `
             Act as a professional resume writer. I need a cover letter for a job application to ${companyName}.
             
@@ -56,7 +61,7 @@ function App() {
             3. Highlight relevant skills from the CV that match a typical role at ${companyName}.
             4. Structure: 
                - Header: Include Name, Email, Phone, LinkedIn/Portfolio only if present in CV. **DO NOT include placeholders like [Your Address] or [City, State]. If address is missing, skip it.**
-               - Date: Use today's date.
+               - Date: ${todayStr}.
                - Salutation: Dear Hiring Manager (or specific name if found).
                - Opening: Strong hook about interest in ${companyName}.
                - Body: aligned with CV skills. Keep paragraphs concise.
