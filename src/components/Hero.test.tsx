@@ -13,38 +13,40 @@ vi.mock('framer-motion', () => ({
 
 describe('Hero', () => {
   const mockOnStart = vi.fn();
+  const mockOnStartCVTailoring = vi.fn();
   const t = translations.en.hero;
 
   beforeEach(() => {
     mockOnStart.mockClear();
+    mockOnStartCVTailoring.mockClear();
   });
 
   it('should render the title', () => {
-    render(<Hero onStart={mockOnStart} t={t} />);
+    render(<Hero onStart={mockOnStart} onStartCVTailoring={mockOnStartCVTailoring} t={t} />);
     expect(screen.getByText(t.title1)).toBeInTheDocument();
     expect(screen.getByText(t.title2)).toBeInTheDocument();
   });
 
   it('should render the subtitle', () => {
-    render(<Hero onStart={mockOnStart} t={t} />);
+    render(<Hero onStart={mockOnStart} onStartCVTailoring={mockOnStartCVTailoring} t={t} />);
     expect(screen.getByText(t.subtitle)).toBeInTheDocument();
   });
 
   it('should render the CTA button', () => {
-    render(<Hero onStart={mockOnStart} t={t} />);
+    render(<Hero onStart={mockOnStart} onStartCVTailoring={mockOnStartCVTailoring} t={t} />);
     expect(screen.getByText(t.cta)).toBeInTheDocument();
   });
 
   it('should call onStart when CTA button is clicked', async () => {
     const user = userEvent.setup();
-    render(<Hero onStart={mockOnStart} t={t} />);
+    render(<Hero onStart={mockOnStart} onStartCVTailoring={mockOnStartCVTailoring} t={t} />);
 
     await user.click(screen.getByText(t.cta));
     expect(mockOnStart).toHaveBeenCalledTimes(1);
   });
 
   it('should render all feature badges', () => {
-    render(<Hero onStart={mockOnStart} t={t} />);
+    render(<Hero onStart={mockOnStart} onStartCVTailoring={mockOnStartCVTailoring} t={t} />);
     for (const feature of t.features) {
       expect(screen.getByText(feature)).toBeInTheDocument();
     }

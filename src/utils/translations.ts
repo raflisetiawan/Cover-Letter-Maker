@@ -11,7 +11,52 @@ export const translations = {
       title2: "Cover Letter with AI",
       subtitle: "Transform your CV into a professional, tailored cover letter in seconds. Powered by advanced AI to help you land your dream job.",
       cta: "Create Now",
+      ctaCvTailoring: "Tailor My CV",
       features: ["ATS Friendly", "Professional Tone", "Instant Download"]
+    },
+    cvTailoring: {
+      steps: ["Details", "Upload & Generate"],
+      step1: {
+        title: "Job Details",
+        subtitle: "Tell us about the target job",
+        companyPlaceholder: "Target Company (e.g. Google)",
+        jobDescLabel: "Job Description *",
+        jobDescPlaceholder: "Paste the full job description here...",
+        jobDescSub: "The more detailed, the better the tailoring result",
+        next: "Next Step"
+      },
+      step2: {
+        title: "Upload & Generate",
+        subtitle: "Upload your CV, provide API key, and generate",
+        cvLabel: "Curriculum Vitae (PDF) *",
+        cvPlaceholder: "Upload CV",
+        cvSub: "PDF only (Max 5MB)",
+        supportLabel: "Supporting Documents (Optional)",
+        supportPlaceholder: "Add Certificates / Portfolio",
+        supportSub: "PDF or Images (Max 5MB each)",
+        apiKeyLabel: "Gemini API Key *",
+        apiKeyPlaceholder: "Paste your Gemini API Key here",
+        apiKeyWarning: "Your API key is never stored. It's used only for this session request.",
+        customPromptLabel: "Custom Instructions (Optional)",
+        customPromptPlaceholder: "e.g. 'Emphasize my backend development experience' or 'Highlight leadership roles'",
+        back: "Back",
+        generate: "Tailor My CV",
+        generating: "Tailoring...",
+        noKey: "Don't have a key?",
+        getKey: "Get one from Google AI Studio"
+      },
+      errors: {
+        pdfOnly: "Please upload a PDF file",
+        readError: "Failed to read PDF. Please try another file."
+      },
+      preview: {
+        title: "Tailored CV",
+        description: "Use the tailored text below to update your original CV. Your original design and layout will be preserved.",
+        copy: "Copy to clipboard",
+        download: "Download PDF",
+        merging: "Generating PDF...",
+        createNew: "Tailor Another CV"
+      }
     },
     form: {
       steps: ["Details", "Uploads", "API Key"],
@@ -91,7 +136,52 @@ export const translations = {
       title2: "Sempurna dengan AI",
       subtitle: "Ubah CV Anda menjadi cover letter profesional dalam hitungan detik. Ditenagai AI canggih untuk membantu Anda mendapatkan pekerjaan impian.",
       cta: "Buat Sekarang",
+      ctaCvTailoring: "Sesuaikan CV Saya",
       features: ["Ramah ATS", "Nada Profesional", "Unduh Instan"]
+    },
+    cvTailoring: {
+      steps: ["Detail", "Upload & Buat"],
+      step1: {
+        title: "Detail Pekerjaan",
+        subtitle: "Ceritakan tentang pekerjaan yang dituju",
+        companyPlaceholder: "Perusahaan Tujuan (cth. Google)",
+        jobDescLabel: "Deskripsi Pekerjaan *",
+        jobDescPlaceholder: "Tempel deskripsi pekerjaan lengkap di sini...",
+        jobDescSub: "Semakin detail, semakin baik hasil penyesuaian",
+        next: "Lanjut"
+      },
+      step2: {
+        title: "Upload & Buat",
+        subtitle: "Upload CV Anda, masukkan API key, dan buat",
+        cvLabel: "Curriculum Vitae (PDF) *",
+        cvPlaceholder: "Upload CV",
+        cvSub: "Hanya PDF (Maks 5MB)",
+        supportLabel: "Dokumen Pendukung (Opsional)",
+        supportPlaceholder: "Tambah Sertifikat / Portofolio",
+        supportSub: "PDF atau Gambar (Maks 5MB per file)",
+        apiKeyLabel: "Gemini API Key *",
+        apiKeyPlaceholder: "Tempel Gemini API Key Anda di sini",
+        apiKeyWarning: "API key Anda tidak pernah disimpan. Hanya digunakan untuk sesi ini.",
+        customPromptLabel: "Instruksi Khusus (Opsional)",
+        customPromptPlaceholder: "cth. 'Tonjolkan pengalaman backend development saya' atau 'Fokus pada peran kepemimpinan'",
+        back: "Kembali",
+        generate: "Sesuaikan CV Saya",
+        generating: "Sedang Menyesuaikan...",
+        noKey: "Belum punya key?",
+        getKey: "Dapatkan dari Google AI Studio"
+      },
+      errors: {
+        pdfOnly: "Mohon upload file PDF",
+        readError: "Gagal membaca PDF. Silakan coba file lain."
+      },
+      preview: {
+        title: "CV yang Disesuaikan",
+        description: "Gunakan teks yang sudah disesuaikan di bawah untuk memperbarui CV asli Anda. Desain dan layout asli CV Anda tetap terjaga.",
+        copy: "Salin ke clipboard",
+        download: "Unduh PDF",
+        merging: "Membuat PDF...",
+        createNew: "Sesuaikan CV Lain"
+      }
     },
     form: {
       steps: ["Detail", "Upload", "API Key"],

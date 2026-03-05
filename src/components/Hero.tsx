@@ -1,18 +1,20 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2, FileEdit } from 'lucide-react';
 
 interface HeroProps {
   onStart: () => void;
+  onStartCVTailoring: () => void;
   t: {
     title1: string;
     title2: string;
     subtitle: string;
     cta: string;
+    ctaCvTailoring: string;
     features: string[];
   };
 }
 
-export const Hero = ({ onStart, t }: HeroProps) => {
+export const Hero = ({ onStart, onStartCVTailoring, t }: HeroProps) => {
   return (
     <div className="relative overflow-hidden pt-24 pb-12 md:pt-32 md:pb-16 lg:pt-48 lg:pb-32">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -37,14 +39,21 @@ export const Hero = ({ onStart, t }: HeroProps) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex justify-center gap-4"
+            className="flex flex-col sm:flex-row justify-center gap-4"
           >
             <button
               onClick={onStart}
-              className="group px-6 py-3 md:px-8 md:py-4 text-base md:text-lg font-bold text-white bg-indigo-600 rounded-full hover:bg-indigo-700 transition-all hover:shadow-xl hover:shadow-indigo-500/40 flex items-center gap-2"
+              className="group px-6 py-3 md:px-8 md:py-4 text-base md:text-lg font-bold text-white bg-indigo-600 rounded-full hover:bg-indigo-700 transition-all hover:shadow-xl hover:shadow-indigo-500/40 flex items-center justify-center gap-2"
             >
               {t.cta}
               <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
+            </button>
+            <button
+              onClick={onStartCVTailoring}
+              className="group px-6 py-3 md:px-8 md:py-4 text-base md:text-lg font-bold text-white bg-gradient-to-r from-emerald-500 to-teal-600 rounded-full hover:from-emerald-600 hover:to-teal-700 transition-all hover:shadow-xl hover:shadow-emerald-500/40 flex items-center justify-center gap-2"
+            >
+              <FileEdit className="w-4 h-4 md:w-5 md:h-5" />
+              {t.ctaCvTailoring}
             </button>
           </motion.div>
 

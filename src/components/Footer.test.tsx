@@ -32,7 +32,7 @@ describe('Footer', () => {
     render(<Footer onGuideClick={mockOnGuideClick} />);
     const githubLink = screen.getByText('GitHub');
     expect(githubLink).toBeInTheDocument();
-    expect(githubLink.closest('a')).toHaveAttribute('href', 'https://github.com');
+    expect(githubLink.closest('a')).toHaveAttribute('href', 'https://github.com/raflisetiawan/Cover-Letter-Maker');
     expect(githubLink.closest('a')).toHaveAttribute('target', '_blank');
   });
 });
